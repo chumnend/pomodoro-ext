@@ -2,7 +2,7 @@ let timer;
 let timeLeft = 25 * 60;
 
 chrome.runtime.onMessage.addListener((message) => {
-  switch(message) {
+  switch(message.command) {
     case 'start':
       if(!timer) {
         timer = setInterval(() => {
@@ -33,6 +33,7 @@ chrome.runtime.onMessage.addListener((message) => {
       timeLeft = 25 * 60;
       break;
     default:
-      alert('Unknown Message');
+      console.log(`unknown message: ${message}`);
+      return;
   }
 });
