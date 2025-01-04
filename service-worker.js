@@ -1,5 +1,5 @@
 let timer;
-let timeLeft = 25 * 60;
+let timeLeft = 1500; // 25 minutes
 
 chrome.runtime.onMessage.addListener((message) => {
   switch(message.command) {
